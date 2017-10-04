@@ -1,0 +1,293 @@
+/* 
+    Created on : Sep 22, 2017, 11:45:05 AM
+    Author     : James Warner
+*/
+
+body {
+    display: grid;
+    grid-template-columns: 1% 98% 1%;
+    grid-template-rows: 20% 40px 55% 5%;
+    grid-template-areas: ". header ."
+                         ". nav ."
+                         ". main ."
+                         ". footer .";
+    background-image: url(../images/site/background.jpg);
+}
+
+header {
+    grid-area: header;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "logo . . my-account";
+}
+
+#logo {
+    grid-area: logo;
+    justify-self: end;
+    width: 150px;
+}
+
+#my-account {
+    grid-area: my-account;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+#my-account h4 {
+    justify-self: center;
+}
+
+#my-account img {
+    justify-self: end;
+    align-self: center;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #de2226;
+}
+
+nav ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+nav ul li {  
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+nav ul li:hover {
+    background-color: #fff;
+}
+
+nav ul li:hover a {
+    color: #de2226;
+}
+
+nav ul li:active {
+    background-color: #fff;
+}
+
+nav ul li:active a {
+    color: #de2226;
+}
+
+main {
+    grid-area: main;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    background-color: #fff;
+}
+
+h1 {
+    font-size: 18px;
+}
+
+#feature-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: ". feature-desc"
+                         ". feature-desc-btn";
+    background-image: url(../images/site/rocketfeature.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 160px;
+
+}
+
+#feature-desc {
+    grid-area: feature-desc;
+    align-self: end;
+    /*white background transparent*/
+    background: rgba(255,255,255,0.5);
+}
+
+#feature-desc h2 {
+    font-size: 20px;
+    color: #903;
+    margin: 0;
+}
+
+#feature-desc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #903;
+    font-size: 14px;
+}
+
+#i-want-it-now-button {
+    grid-area: feature-desc-btn;
+    background: rgba(255,255,255,0.5);
+}
+
+#i-want-it-now-button img {
+    width: 120px;
+}
+
+#recipes-and-reviews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10% 40% 10% 20% 20%;
+    grid-template-areas: "review-title review-title"
+                         "raving-reviews raving-reviews"
+                         "recipe-title recipe-title"
+                         "recipe-1 recipe-2"
+                         "recipe-3 recipe-4";
+}
+
+#recipes-and-reviews a {
+    font-size: 13px;
+}
+
+#review-title {
+    grid-area: review-title;
+}
+
+#raving-reviews {
+    grid-area: raving-reviews;
+}
+
+#recipe-title {
+    grid-area: recipe-title;
+}
+
+#feature-recipe-1 {
+    grid-area: recipe-1;
+    display: grid;
+    justify-items: center;
+}
+
+#feature-recipe-2 {
+    grid-area: recipe-2;
+    display: grid;
+    justify-items: center;
+}
+
+#feature-recipe-3 {
+    grid-area: recipe-3;
+    display: grid;
+    justify-items: center;
+}
+
+#feature-recipe-4 {
+    grid-area: recipe-4;
+    display: grid;
+    justify-items: center;
+}
+footer {
+    grid-area: footer;
+    background-color: #fff;
+    text-align: center;
+    border-style: solid hidden hidden hidden;
+    border-width: 5px;
+    font-size: 10px;
+}
+
+
+@media screen and (min-width: 380px) {
+    body {
+        grid-template-columns: 3% 94% 3%;
+    }
+    nav ul li{
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 26px;
+    }
+    #feature-image {
+        height: 250px;
+    }
+    #feature-desc {
+        background: none;
+    }
+    #feature-desc h2 {
+        font-size: 23px;
+    }
+    #feature-desc ul {
+        font-size: 16px;
+    }
+    #i-want-it-now-button {
+        background: none;
+    }
+    #i-want-it-now-button img {
+        width: 180px;
+    }
+    footer {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        grid-template-rows: 25% 60px 50% 5%;
+        grid-template-columns: 10% 80% 10%;
+    }
+    
+    #logo {
+        width: 200px;
+    }
+    
+    nav ul li{
+        font-size: 28px;
+    }
+    
+    h1 {
+        font-size: 40px;
+    }
+    #feature-image {
+        height: 600px;
+    }
+    #feature-desc {
+        justify-self: end;
+        padding-right: 50px;
+    }
+    #feature-desc h2 {
+        font-size: 36px;
+    }
+    #feature-desc ul {
+        font-size: 18px;
+    }
+    #i-want-it-now-button {
+        justify-self: end;
+        padding-right: 50px;
+    }
+    #i-want-it-now-button img {
+        width: 250px;
+    }
+    #recipes-and-reviews {
+        grid-template-columns: 0.5fr 0.5fr 1fr;
+        grid-template-rows: 10% 45% 45%;
+        grid-template-areas: "recipe-title recipe-title review-title"
+                             "recipe-1 recipe-2 raving-reviews"
+                             "recipe-3 recipe-4 raving-reviews";
+    }
+    #recipes-and-reviews h3 {
+        font-size: 28px;
+    }
+    #recipes-and-reviews a {
+        font-size: 18px;
+    }
+    footer {
+        font-size: 16px;
+    }
+}
